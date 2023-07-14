@@ -1,10 +1,12 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import styles from '../styles/Home.module.css'
+import Featured from '@/components/Featured'
+import PizzaList from '@/components/PizzaList'
 
 export default function Home() {
   return (
     <main className={styles.container}>
-      Home
+      <Featured />
+      <PizzaList/>
     </main>
   )
 }
