@@ -1,5 +1,6 @@
 import Image from "next/image";
-import styles from "../styles/Navbar.module.css"
+import styles from "../styles/Navbar.module.css";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -20,7 +21,9 @@ export default function Navbar() {
       </div>
       <div className={styles.item}>
         <ul className={styles.list}>
-          <li className={styles.listItem}>HomePage</li>
+          <li className={styles.listItem}>
+            <Link style={{textDecoration:"none",color:"white"}} href={"/"}>HomePage</Link>
+          </li>
           <li className={styles.listItem}>Products</li>
           <li className={styles.listItem}>Menu</li>
           <Image src={"/img/logo.png"} alt="" width={160} height={69} />
@@ -31,8 +34,10 @@ export default function Navbar() {
       </div>
       <div className={styles.item}>
         <div className={styles.cart}>
-          <Image src={"/img/cart.png"} alt="" width={30} height={30} />
-          <div className={styles.counter}>2</div>
+          <Link href={"/cart"}>
+            <Image src={"/img/cart.png"} alt="" width={30} height={30} />
+            <div className={styles.counter}>2</div>
+          </Link>
         </div>
       </div>
     </div>
